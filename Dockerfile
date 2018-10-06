@@ -17,9 +17,9 @@ RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tl
     $conf = 'import c:\caddydata\conf\*\'; \
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False); \
     [System.IO.File]::WriteAllLines('c:\caddy\Caddyfile', $conf, $Utf8NoBomEncoding); \
-    New-Item c:\caddydata -type directory ; \
-    Remove-Item c:\caddy.zip -Force \
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' -Name 'G:' -Value "\??\C:\caddydata" -Type String;
+    New-Item c:\caddydata -type directory; \
+    Remove-Item c:\caddy.zip -Force; \
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' -Name 'G:' -Value "\??\C:\caddydata" -Type String
 
 WORKDIR /caddy
 
