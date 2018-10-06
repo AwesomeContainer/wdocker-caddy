@@ -14,7 +14,7 @@ RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tl
     Invoke-WebRequest -Method Get -Uri 'https://caddyserver.com/download/windows/amd64?license=personal' -OutFile c:\caddy.zip; \
     Expand-Archive -Path c:\caddy.zip -DestinationPath c:\caddy\; \
     Start-Sleep -Seconds 3; \
-    $conf = 'import G:\conf\*\'; \
+    $conf = 'import G:\conf\*'; \
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False); \
     [System.IO.File]::WriteAllLines('c:\caddy\Caddyfile', $conf, $Utf8NoBomEncoding); \
     New-Item c:\caddydata -type directory; \
