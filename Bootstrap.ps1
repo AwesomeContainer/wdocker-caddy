@@ -4,7 +4,7 @@
 #
 
 # Functions
-function Check-Directory {
+function Confirm-Directory {
  param( [string]$InputDir )
  if ((Test-Path -Path $InputDir) -eq $false)
  {
@@ -15,9 +15,9 @@ function Check-Directory {
 
 # Check if the config dirs are created, be sure to use a volume mount for this data.
 Write-Output "Checking config dirs in volume mount.. "
-Check-Directory "G:\conf"
-Check-Directory "G:\html"
-Check-Directory "G:\logs"
+Confirm-Directory "G:\conf"
+Confirm-Directory "G:\html"
+Confirm-Directory "G:\logs"
 
 Write-Output "Bootstrapping Caddy.exe.. "
 & C:\caddy\caddy.exe
