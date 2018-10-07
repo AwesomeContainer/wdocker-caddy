@@ -4,7 +4,8 @@
 
 FROM microsoft/windowsservercore
 
-LABEL Description="Caddy" Vendor="Light Code Labs" Version="latest"
+LABEL description="Caddy" vendor="Light Code Labs" version="latest"
+LABEL maintainer="AwesomeContainer"
 
 EXPOSE 80
 
@@ -25,4 +26,6 @@ WORKDIR /caddy
 
 VOLUME c:\\caddydata
 
-CMD ["/caddy/caddy.exe"]
+COPY Bootstrap.ps1 /
+
+ENTRYPOINT ["powershell", "C:\\Bootstrap.ps1"]
