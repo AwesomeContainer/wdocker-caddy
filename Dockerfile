@@ -28,4 +28,4 @@ VOLUME c:\\caddydata
 
 COPY Bootstrap.ps1 /
 
-ENTRYPOINT ["powershell", "C:\\Bootstrap.ps1"]
+ENTRYPOINT ["powershell", "-ExecutionPolicy", "Unrestricted", "C:\\Bootstrap.ps1"]
