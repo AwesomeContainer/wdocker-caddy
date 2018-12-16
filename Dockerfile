@@ -2,7 +2,7 @@
 # https://hub.docker.com/r/awesomecontainer/wdocker-caddy
 # https://github.com/AwesomeContainer/wdocker-caddy
 
-FROM mcr.microsoft.com/windows:1809
+FROM mcr.microsoft.com/nanoserver
 
 LABEL description="Caddy" vendor="Light Code Labs" version="latest"
 LABEL maintainer="AwesomeContainer"
