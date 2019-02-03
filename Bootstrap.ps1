@@ -15,9 +15,9 @@ function Confirm-Directory {
 
 # Check if the config dirs are created, be sure to use a volume mount for this data.
 Write-Output "[$(Get-Date)]: Checking config dirs in volume mount.. "
-Confirm-Directory "G:\conf"
-Confirm-Directory "G:\html"
-Confirm-Directory "G:\logs"
+Confirm-Directory "c:\caddydata\conf"
+Confirm-Directory "c:\caddydata\html"
+Confirm-Directory "c:\caddydata\logs"
 
 Write-Output "[$(Get-Date)]: Bootstrapping Caddy.exe.. "
 & C:\caddy\caddy.exe
