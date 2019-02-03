@@ -1,4 +1,7 @@
 [![Build Status](https://dev.azure.com/AwesomeContainer/AzurePipeline/_apis/build/status/AzurePipeline-wdocker-caddy)](https://dev.azure.com/AwesomeContainer/AzurePipeline/_build/latest?definitionId=2)
+![Pulls from Docker Hub](https://img.shields.io/docker/pulls/awesomecontainer/wdocker-caddy.svg?style=flat)
+![Stars on Docker Hub](https://img.shields.io/docker/stars/awesomecontainer/wdocker-caddy.svg?style=flat)
+![Number of layers in container image](https://img.shields.io/microbadger/layers/awesomecontainer/wdocker-caddy.svg?style=flat)
 
 # wdocker-caddy
 Windows Docker container: Caddy
