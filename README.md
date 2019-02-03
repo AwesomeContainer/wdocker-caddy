@@ -14,6 +14,7 @@ To run this container, try using docker-compose. Adjust [docker-compose.yml](htt
 You can update this container using docker-compose:
 
 *docker-compose pull*
+
 *docker-compose up -d*
 
 If you don't want to use docker-compose, you can run this container directly from Docker Hub using Docker.exe:
