@@ -1,4 +1,4 @@
-# Awesome Container (Windows): Caddy
+# Awesome Container (Docker Windows): Caddy
 # https://hub.docker.com/r/awesomecontainer/wdocker-caddy
 # https://github.com/AwesomeContainer/wdocker-caddy
 
@@ -6,6 +6,7 @@ FROM mcr.microsoft.com/windows/servercore:1809
 
 LABEL description="Caddy" vendor="Light Code Labs" version="latest"
 LABEL maintainer="AwesomeContainer"
+
 
 EXPOSE 80
 
@@ -15,12 +16,11 @@ RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tl
     Invoke-WebRequest -Method Get -Uri 'https://caddyserver.com/download/windows/amd64?license=personal' -OutFile c:\caddy.zip; \
     Expand-Archive -Path c:\caddy.zip -DestinationPath c:\caddy\; \
     Start-Sleep -Seconds 3; \
-    $conf = 'import G:\conf\*'; \
+    Remove-Item c:\caddy.zip -Force; \
+    $conf = 'import c:\caddydata\conf\*'; \
     $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding($False); \
     [System.IO.File]::WriteAllLines('c:\caddy\Caddyfile', $conf, $Utf8NoBomEncoding); \
-    New-Item c:\caddydata -type directory; \
-    Remove-Item c:\caddy.zip -Force; \
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' -Name 'G:' -Value "\??\C:\caddydata" -Type String
+    New-Item c:\caddydata -type directory; 
 
 WORKDIR /caddy
 
