@@ -2,7 +2,7 @@ version: '2.1'
 services:  
   caddy:
     build: .
-    image: awesomecontainer/wdocker-caddy
+    image: awesomecontainer/wdocker-caddy:${DOCKERTAG:-latest}
     container_name: caddy
     volumes:
       - C:\DockerData\caddy:c:\caddydata
