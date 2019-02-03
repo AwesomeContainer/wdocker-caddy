@@ -1,11 +1,14 @@
-# Awesome Container (Windows): Caddy
+# Awesome Container (Docker Windows): Caddy
 # https://hub.docker.com/r/awesomecontainer/wdocker-caddy
 # https://github.com/AwesomeContainer/wdocker-caddy
 
 FROM mcr.microsoft.com/windows/servercore:1809
 
+ARG BUILD_DATE
+
 LABEL description="Caddy" vendor="Light Code Labs" version="latest"
 LABEL maintainer="AwesomeContainer"
+LABEL org.label-schema.build-date=$BUILD_DATE
 
 EXPOSE 80
 
